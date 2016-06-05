@@ -113,8 +113,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             Physics.SphereCast(transform.position, m_CharacterController.radius, Vector3.down, out hitInfo,
                                m_CharacterController.height/2f);
             desiredMove = Vector3.ProjectOnPlane(desiredMove, hitInfo.normal).normalized;
-            
-            Vector2 limitVector = Vector2.ClampMagnitude(new Vector2(desiredMove.x, desiredMove.z), m_RunSpeed);
 
             //If just a regular jump, do regular movement, otherwise add momentum
             if (!m_Flying) {
@@ -126,17 +124,20 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     m_MoveDir.x = desiredMove.x*speed;
                     m_MoveDir.z = desiredMove.z*speed;    
                 } else { //Falling through the air
-                    m_MoveDir.x += limitVector.x*speed*Time.deltaTime;
-                    m_MoveDir.z += limitVector.y*speed*Time.deltaTime;                }
+                    m_MoveDir.x += desiredMove.x*speed*m_flyModifier*Time.deltaTime;
+                    m_MoveDir.z += desiredMove.z*speed*m_flyModifier*Time.deltaTime;
+            
+                    m_MoveDir.x = Vector2.ClampMagnitude(new Vector2(m_MoveDir.x, m_MoveDir.z), m_RunSpeed).x;
+                    m_MoveDir.z = Vector2.ClampMagnitude(new Vector2(m_MoveDir.x, m_MoveDir.z), m_RunSpeed).y;             
+                }
             //Jetpacking                              
             } else {
                 
-                m_MoveDir.x += limitVector.x*speed*m_flyModifier*Time.deltaTime;
-                m_MoveDir.z += limitVector.y*speed*m_flyModifier*Time.deltaTime;
+                m_MoveDir.x += desiredMove.x*speed*m_flyModifier*Time.deltaTime;
+                m_MoveDir.z += desiredMove.z*speed*m_flyModifier*Time.deltaTime;
                 
                 m_MoveDir.x = Vector2.ClampMagnitude(new Vector2(m_MoveDir.x, m_MoveDir.z), m_RunSpeed).x;
                 m_MoveDir.z = Vector2.ClampMagnitude(new Vector2(m_MoveDir.x, m_MoveDir.z), m_RunSpeed).y;
-                
 
             }
 
