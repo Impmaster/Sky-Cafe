@@ -115,9 +115,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             desiredMove = Vector3.ProjectOnPlane(desiredMove, hitInfo.normal).normalized;
 
             //If just a regular jump, do regular movement, otherwise add momentum
-            if (!m_Flying) {
-                
-                
+            if (!m_Flying) {          
                 
                 //On the ground
                 if (m_CharacterController.isGrounded) {
