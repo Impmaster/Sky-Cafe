@@ -125,8 +125,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     m_MoveDir.x += desiredMove.x*speed*m_flyModifier*Time.deltaTime;
                     m_MoveDir.z += desiredMove.z*speed*m_flyModifier*Time.deltaTime;
             
+                    float oldX = m_MoveDir.x;
+                
                     m_MoveDir.x = Vector2.ClampMagnitude(new Vector2(m_MoveDir.x, m_MoveDir.z), m_RunSpeed).x;
-                    m_MoveDir.z = Vector2.ClampMagnitude(new Vector2(m_MoveDir.x, m_MoveDir.z), m_RunSpeed).y;             
+                    m_MoveDir.z = Vector2.ClampMagnitude(new Vector2(oldX, m_MoveDir.z), m_RunSpeed).y;           
                 }
             //Jetpacking                              
             } else {
@@ -134,8 +136,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_MoveDir.x += desiredMove.x*speed*m_flyModifier*Time.deltaTime;
                 m_MoveDir.z += desiredMove.z*speed*m_flyModifier*Time.deltaTime;
                 
+                float oldX = m_MoveDir.x;
+                
                 m_MoveDir.x = Vector2.ClampMagnitude(new Vector2(m_MoveDir.x, m_MoveDir.z), m_RunSpeed).x;
-                m_MoveDir.z = Vector2.ClampMagnitude(new Vector2(m_MoveDir.x, m_MoveDir.z), m_RunSpeed).y;
+                m_MoveDir.z = Vector2.ClampMagnitude(new Vector2(oldX, m_MoveDir.z), m_RunSpeed).y;
 
             }
 
