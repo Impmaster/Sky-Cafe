@@ -24,7 +24,7 @@ public class fly : MonoBehaviour {
 
 	public AudioClip flySound;
 
-	AudioSource audio;
+	AudioSource audioSrc;
 	
 
 	
@@ -34,7 +34,7 @@ public class fly : MonoBehaviour {
 		distanceToGround = GetComponent<Collider>().bounds.extents.y;
 		movementScript = GetComponent<FirstPersonController>();
 		cam = GetComponentInChildren<Camera>();
-		audio = GetComponent<AudioSource>();
+		audioSrc = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -52,9 +52,9 @@ public class fly : MonoBehaviour {
 
 				if (Input.GetKey(KeyCode.Space)) {
 					//Do sound effect
-					if (!audio.isPlaying) {
-						audio.clip = flySound;
-						audio.Play();
+					if (!audioSrc.isPlaying) {
+						audioSrc.clip = flySound;
+						audioSrc.Play();
 					}
 
 					//Measures the angle the camera should shake at
@@ -73,8 +73,8 @@ public class fly : MonoBehaviour {
 				//Fall through the air	
 				} else {
 					//Turn off sound
-					if (audio.isPlaying) {
-						audio.Stop();
+					if (audioSrc.isPlaying) {
+						audioSrc.Stop();
 					}
 
 
