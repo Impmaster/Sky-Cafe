@@ -7,11 +7,13 @@ public class chooseTable : MonoBehaviour {
 	private GameObject[] tables;
 	private int[] taken;
 
+	public GameObject platforms;
 	// Use this for initialization
 	void Start () {
 		taken = new int[tables.Length];
 		for (int x = 0; x < tables.Length; x++) {
 			taken[x] = 0;
+			tables[x] = platforms.transform.GetChild(x).gameObject;
 		}
 	}
 	
