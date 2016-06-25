@@ -5,16 +5,14 @@
 public class pickUp : MonoBehaviour {
 
 	public Camera cam;
-
-	public int distanceFromObject = 5;
-
+	public LookAt lookAt;
+	public holdMug machineScript;
+	//When the items Layer is created, it has to be changed here.
+	public int itemsLayer = 8;
 	private bool isHolding;
 	private GameObject currentObject;
 
-	//When the items Layer is created, it has to be changed here.
-	public int itemsLayer = 8;
 
-	public holdMug machineScript;
 
 	// Use this for initialization
 	void Start () {
@@ -25,39 +23,38 @@ public class pickUp : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	    RaycastHit hit;
-        Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
 
 		if (!isHolding) {
 			//Casts a ray only on the "item" layer
-			if (Physics.Raycast(ray, out hit, distanceFromObject, itemsLayer)) {
-				
-
+			if (lookAt.inFront(out hit, itemsLayer)) {
 				//Chooses to pick up an object
 				if (Input.GetKeyDown(KeyCode.E)) {
-
-					//If not holding anything, pick it up
-					if (!isHolding) {
-						hit.transform.SetParent(gameObject.transform);
-						hit.transform.gameObject.GetComponent<Collider>().attachedRigidbody.isKinematic = true;
-						currentObject = hit.transform.gameObject;
-						isHolding = true;
-						if (machineScript.trigger()) {
-							machineScript.setHolding(false);
-						}
-					} else {
-						//Do a sound effect or something
-					}
+					//Set the object to be linked to the player
+					hit.transform.SetParent(gameObject.transform);
+					//Turn off the physics
+					hit.transform.gameObject.GetComponent<Collider>().attachedRigidbody.isKinematic = true;
+					//Start holding the object
+					currentObject = hit.transform.gameObject;
+					isHolding = true;
+					
+					//If the cup was in the machine, tell the machine it's now empty
+					if (machineScript.trigger()) {
+						machineScript.setHolding(false);
+					} 
 				}
 				
 			}
-		} else {
+		} else { //Holding something
 
 			if (Input.GetKeyDown(KeyCode.E)) {
 				//Put the mug on the machine
 				if (machineScript.trigger()) {
+
+					//Set it in the machine
 					currentObject.transform.SetParent(null);
 					currentObject.GetComponent<Collider>().attachedRigidbody.isKinematic = false;
 					currentObject.transform.position = machineScript.MugHolder.transform.position;
+					//Tell the player it's now empty and the machine is full
 					isHolding = false;
 					machineScript.setHolding(true);
 					machineScript.setMug(currentObject);

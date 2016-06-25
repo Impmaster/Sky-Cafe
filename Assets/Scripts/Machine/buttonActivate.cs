@@ -6,13 +6,11 @@ public class buttonActivate : MonoBehaviour {
 
 	public Camera cam;
 	public holdMug machineScript;
+	public LookAt lookAt;
 	public string type;
-
-	private mugInventory mugHolder;
-
 	public int distanceFromObject = 5;
-
 	public float pushDistance = 0.01f;
+	private mugInventory mugHolder;
 
 	private Vector3 pushedLocation;
 	private Vector3 originalLocation;
@@ -26,10 +24,9 @@ public class buttonActivate : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	    RaycastHit hit;
-        Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
 
 		//If the player is looking at the button
-        if (Physics.Raycast(ray, out hit, distanceFromObject)) {
+        if (lookAt.inFront(out hit)) {
 			if (Input.GetKeyDown(KeyCode.E)) {
 				if (hit.transform.gameObject == gameObject) {
 					Push();
@@ -48,8 +45,11 @@ public class buttonActivate : MonoBehaviour {
 
 	void Push() {
 		transform.localPosition = pushedLocation;
-		mugHolder = machineScript.getMug().GetComponent<mugInventory>();
-		mugHolder.addIngredient(type);
+		if (machineScript.holding()) {
+			mugHolder = machineScript.getMug().GetComponent<mugInventory>();
+			mugHolder.addIngredient(type);
+
+		}
 	}
 
 	void Undo() {

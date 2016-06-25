@@ -579,6 +579,10 @@ Prefab:
       propertyPath: machineScript
       value: 
       objectReference: {fileID: 1344153975}
+    - target: {fileID: 11438862, guid: e799c5784551a4442b61d11f30c697e4, type: 2}
+      propertyPath: lookAt
+      value: 
+      objectReference: {fileID: 1890485926}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e799c5784551a4442b61d11f30c697e4, type: 2}
   m_IsPrefabParent: 0
@@ -4078,6 +4082,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 1333829641}
   machineScript: {fileID: 1344153975}
+  lookAt: {fileID: 1890485926}
   type: Coffee
   distanceFromObject: 10
   pushDistance: 0.01
@@ -6705,6 +6710,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
+--- !u!1 &1890485919 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 154280, guid: e799c5784551a4442b61d11f30c697e4, type: 2}
+  m_PrefabInternal: {fileID: 166659655}
+--- !u!114 &1890485926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1890485919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a535483f621a0488597d72188bad6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1333829641}
+  distanceFromObject: 5
 --- !u!1 &1891637719
 GameObject:
   m_ObjectHideFlags: 0
