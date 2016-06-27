@@ -8,6 +8,9 @@ public class chooseTable : MonoBehaviour {
 	private int[] taken;
 
 	public GameObject platforms;
+
+	public GameObject coaster;
+
 	// Use this for initialization
 	void Start () {
 		taken = new int[tables.Length];
@@ -28,4 +31,5 @@ public class chooseTable : MonoBehaviour {
 		taken[table] = 1;
 		return tables[table];
 	}
+
 }

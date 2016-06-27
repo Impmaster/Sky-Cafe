@@ -158,7 +158,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 15689205}
-  m_Layer: 0
+  - 114: {fileID: 15689206}
+  m_Layer: 9
   m_Name: Coffee Machine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,6 +186,21 @@ Transform:
   - {fileID: 1708745546}
   m_Father: {fileID: 0}
   m_RootOrder: 14
+--- !u!114 &15689206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 15689204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a52f1a18cee646640b80923f45883d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MugHolder: {fileID: 1708745545}
+  mug: {fileID: 0}
+  isHolding: 0
+  inTrigger: 0
 --- !u!1 &25752581
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,7 +594,7 @@ Prefab:
     - target: {fileID: 11438862, guid: e799c5784551a4442b61d11f30c697e4, type: 2}
       propertyPath: machineScript
       value: 
-      objectReference: {fileID: 1344153975}
+      objectReference: {fileID: 0}
     - target: {fileID: 11438862, guid: e799c5784551a4442b61d11f30c697e4, type: 2}
       propertyPath: lookAt
       value: 
@@ -2947,25 +2963,181 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
+        - HutongGames.PlayMaker.Actions.FindChild
+        - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.CallMethod
         - HutongGames.PlayMaker.Actions.BoolTest
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000005000000
-        actionHashCodes: 35355304a4c8bf00
+        - 
+        - 
+        actionEnabled: 01010101
+        actionIsOpen: 01010101
+        actionStartIndex: 0000000003000000050000000a000000
+        actionHashCodes: f90ba7015ac8520435355304a4c8bf00
         unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: Coaster
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Table
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
         fsmEventTargetParams: []
-        fsmPropertyParams: []
+        fsmPropertyParams:
+        - TargetObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: UnityEngine.Object
+            value: {fileID: 716121591}
+          TargetTypeName: Sit
+          PropertyName: coaster
+          BoolParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          FloatParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          IntParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          GameObjectParameter:
+            useVariable: 1
+            name: Coaster
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+          StringParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 
+          Vector2Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0}
+          Vector3Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0}
+          RectParamater:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value:
+              serializedVersion: 2
+              x: 0
+              y: 0
+              width: 0
+              height: 0
+          QuaternionParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0, w: 0}
+          ObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: UnityEngine.GameObject
+            value: {fileID: 0}
+          MaterialParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          TextureParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          ColorParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {r: 0, g: 0, b: 0, a: 1}
+          EnumParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            enumName: HutongGames.PlayMaker.None
+            intValue: 0
+          ArrayParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: UnityEngine.Object
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+          setProperty: 1
         layoutOptionParams: []
         fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Coaster
         - useVariable: 0
           name: 
           tooltip: 
@@ -3024,14 +3196,19 @@ MonoBehaviour:
         stringParams:
         - FINISHED
         - 
-        byteData: 0101
+        byteData: 000101
         arrayParamSizes: 00000000
         arrayParamTypes:
         - HutongGames.PlayMaker.FsmVar
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 18000000120000000c000000270000000100000011000000170000001700000001000000
+        paramDataType: 140000001200000013000000240000000100000018000000120000000c000000270000000100000011000000170000001700000001000000
         paramName:
+        - gameObject
+        - childName
+        - storeResult
+        - targetProperty
+        - everyFrame
         - behaviour
         - methodName
         - parameters
@@ -3041,8 +3218,8 @@ MonoBehaviour:
         - isTrue
         - isFalse
         - everyFrame
-        paramDataPos: 000000000000000000000000000000000000000000000000000000000100000001000000
-        paramByteDataSize: 000000000000000000000000000000000100000000000000000000000000000001000000
+        paramDataPos: 0000000000000000000000000000000000000000000000000100000000000000000000000100000000000000000000000100000002000000
+        paramByteDataSize: 0000000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000001000000
     - name: Drink
       description: 
       colorIndex: 0
@@ -3397,6 +3574,12 @@ MonoBehaviour:
       quaternionVariables: []
       gameObjectVariables:
       - useVariable: 1
+        name: Coaster
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
+      - useVariable: 1
         name: Table
         tooltip: 
         showInInspector: 0
@@ -3409,7 +3592,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 0000000000000000
+      variableCategoryIDs: 000000000000000000000000
     description: The pathfinding for the character. Does not include buying drinks
       or happiness AI.
     docUrl: 
@@ -3420,7 +3603,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 1
+    preprocessed: 0
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
@@ -4080,8 +4263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad2f00b28b2833c4db9d68e1e677e96c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1333829641}
-  machineScript: {fileID: 1344153975}
+  machineScript: {fileID: 15689206}
   lookAt: {fileID: 1890485926}
   type: Coffee
   distanceFromObject: 10
@@ -4556,6 +4738,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   platforms: {fileID: 1816227103}
+  coaster: {fileID: 0}
 --- !u!4 &1280929781
 Transform:
   m_ObjectHideFlags: 0
@@ -4651,7 +4834,6 @@ GameObject:
   - 4: {fileID: 1344153972}
   - 33: {fileID: 1344153974}
   - 65: {fileID: 1344153973}
-  - 114: {fileID: 1344153975}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -4690,21 +4872,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1344153971}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1344153975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1344153971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a52f1a18cee646640b80923f45883d93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MugHolder: {fileID: 1708745545}
-  mug: {fileID: 0}
-  isHolding: 0
-  inTrigger: 0
 --- !u!1 &1349689324
 GameObject:
   m_ObjectHideFlags: 0
@@ -6913,7 +7080,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1934407036}
   m_Layer: 0
-  m_Name: Mug Holder
+  m_Name: Mug Table
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

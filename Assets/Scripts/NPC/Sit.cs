@@ -3,20 +3,14 @@ using System.Collections;
 
 public class Sit : MonoBehaviour {
 
-	[SerializeField]
-	private GameObject coaster;
+	public GameObject coaster;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+	public MoveTo movementScript;
 
+	//If player has put down the drink
 	public bool GotDrink() {
+
+
  		return true;
 	}
 }

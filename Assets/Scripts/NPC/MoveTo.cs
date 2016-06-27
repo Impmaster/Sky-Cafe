@@ -10,4 +10,8 @@ public class MoveTo : MonoBehaviour {
 		NavMeshAgent agent = GetComponent<NavMeshAgent>();
 		agent.destination = dest.position; 
 	}
+
+	public Transform getLocation() {
+		return dest;
+	}
 }

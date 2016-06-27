@@ -4,7 +4,6 @@ using System.Collections;
 public class buttonActivate : MonoBehaviour {
 
 
-	public Camera cam;
 	public holdMug machineScript;
 	public LookAt lookAt;
 	public string type;
