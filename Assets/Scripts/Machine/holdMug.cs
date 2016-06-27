@@ -27,13 +27,14 @@ public class holdMug : MonoBehaviour {
 	}
 
 	void OnTriggerExit(Collider other) {
-		if (!isHolding) {
-			if (other.gameObject.name != "Player") {
-				MugHolder.SetActive(false);
-				inTrigger = false;
-				mug = null;
-			}
+
+		if (other.gameObject.name != "Player") {
+			MugHolder.SetActive(false);
+			inTrigger = false;
+			isHolding = false;
+			mug = null;
 		}
+		
 	}
 
 	public bool holding() {

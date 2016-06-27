@@ -159,6 +159,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 15689205}
   - 114: {fileID: 15689206}
+  - 65: {fileID: 15689207}
   m_Layer: 9
   m_Name: Coffee Machine
   m_TagString: Untagged
@@ -182,7 +183,6 @@ Transform:
   - {fileID: 1396523500}
   - {fileID: 269089751}
   - {fileID: 1077149816}
-  - {fileID: 1344153972}
   - {fileID: 1708745546}
   m_Father: {fileID: 0}
   m_RootOrder: 14
@@ -201,6 +201,18 @@ MonoBehaviour:
   mug: {fileID: 0}
   isHolding: 0
   inTrigger: 0
+--- !u!65 &15689207
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 15689204}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.896276, z: 0.90151787}
+  m_Center: {x: 0, y: 0.448138, z: -0.049242973}
 --- !u!1 &25752581
 GameObject:
   m_ObjectHideFlags: 0
@@ -3603,7 +3615,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
@@ -3655,6 +3667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coaster: {fileID: 0}
+  movementScript: {fileID: 0}
 --- !u!1 &733819766
 GameObject:
   m_ObjectHideFlags: 0
@@ -4160,14 +4173,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 142296, guid: 8ba1474794ec642489d3b83e47f44ccf, type: 2}
-      propertyPath: m_Name
-      value: Cube (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 19135528, guid: 8ba1474794ec642489d3b83e47f44ccf, type: 2}
       propertyPath: m_Start
       value: 
       objectReference: {fileID: 1162292234}
+    - target: {fileID: 142296, guid: 8ba1474794ec642489d3b83e47f44ccf, type: 2}
+      propertyPath: m_Name
+      value: Cube (1)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8ba1474794ec642489d3b83e47f44ccf, type: 2}
   m_IsPrefabParent: 0
@@ -4824,54 +4837,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1341406849}
   m_Mesh: {fileID: 4300032, guid: a45629615dff9c1438a652f2b3f78a24, type: 3}
---- !u!1 &1344153971
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1344153972}
-  - 33: {fileID: 1344153974}
-  - 65: {fileID: 1344153973}
-  m_Layer: 0
-  m_Name: Trigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1344153972
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1344153971}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.835, z: -0.2}
-  m_LocalScale: {x: 1, y: 0.6635775, z: 1.2110006}
-  m_Children: []
-  m_Father: {fileID: 15689205}
-  m_RootOrder: 6
---- !u!65 &1344153973
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1344153971}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &1344153974
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1344153971}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1349689324
 GameObject:
   m_ObjectHideFlags: 0
@@ -6129,7 +6094,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 0.1, z: 0.2}
   m_Children: []
   m_Father: {fileID: 15689205}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!23 &1708745547
 MeshRenderer:
   m_ObjectHideFlags: 0

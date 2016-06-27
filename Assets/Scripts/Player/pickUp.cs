@@ -26,6 +26,7 @@ public class pickUp : MonoBehaviour {
 	void Update () {
 	    RaycastHit hit;
 
+		//Chooses the proper container
 		if (lookAt.inFront(out hit, containersLayer)) {
 			holdScript = hit.transform.gameObject.GetComponent<holdMug>();
 		}
@@ -45,7 +46,7 @@ public class pickUp : MonoBehaviour {
 					
 					//If the cup was in the machine, tell the machine it's now empty
 					if (holdScript != null) {
-						if (holdScript.trigger()) {
+						if (holdScript.trigger() && holdScript.holding() == false) {
 							holdScript.setHolding(false);
 						} 
 
@@ -61,7 +62,7 @@ public class pickUp : MonoBehaviour {
 			if (Input.GetKeyDown(KeyCode.E)) {
 				//Put the mug on the machine
 				if (holdScript != null) {
-					if (holdScript.trigger()) {
+					if (holdScript.trigger() && holdScript.holding() == false) {
 
 						//Set it in the machine
 						currentObject.transform.SetParent(null);
@@ -78,6 +79,11 @@ public class pickUp : MonoBehaviour {
 						isHolding = false;
 					}
 					
+				}  else {
+					//Drop the mug
+					currentObject.transform.SetParent(null);
+					currentObject.GetComponent<Collider>().attachedRigidbody.isKinematic = false;
+					isHolding = false;
 				}
 
 			}
