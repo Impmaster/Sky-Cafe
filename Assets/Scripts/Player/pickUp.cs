@@ -10,6 +10,7 @@ public class pickUp : MonoBehaviour {
 	//When the items Layer is created, it has to be changed here.
 	public int itemsLayer = 8;
 	public int containersLayer = 9;
+	public GameObject holder;
 	private bool isHolding;
 	private GameObject currentObject;
 
@@ -28,7 +29,7 @@ public class pickUp : MonoBehaviour {
 
 		//Chooses the proper container
 		if (lookAt.inFront(out hit, containersLayer)) {
-			holdScript = hit.transform.gameObject.GetComponent<holdMug>();
+			holdScript = hit.collider.transform.gameObject.GetComponent<holdMug>();
 		}
 
 		if (!isHolding) {
@@ -37,11 +38,13 @@ public class pickUp : MonoBehaviour {
 				//Chooses to pick up an object
 				if (Input.GetKeyDown(KeyCode.E)) {
 					//Set the object to be linked to the player
-					hit.transform.SetParent(gameObject.transform);
+					hit.collider.transform.SetParent(holder.transform);
+					hit.collider.transform.position = holder.transform.position;
+					hit.collider.transform.rotation = holder.transform.rotation;
 					//Turn off the physics
-					hit.transform.gameObject.GetComponent<Collider>().attachedRigidbody.isKinematic = true;
+					hit.collider.transform.gameObject.GetComponent<Collider>().attachedRigidbody.isKinematic = true;
 					//Start holding the object
-					currentObject = hit.transform.gameObject;
+					currentObject = hit.collider.transform.gameObject;
 					isHolding = true;
 					
 					//If the cup was in the machine, tell the machine it's now empty
@@ -64,14 +67,16 @@ public class pickUp : MonoBehaviour {
 				if (holdScript != null) {
 					if (holdScript.trigger() && holdScript.holding() == false) {
 
-						//Set it in the machine
-						currentObject.transform.SetParent(null);
-						currentObject.GetComponent<Collider>().attachedRigidbody.isKinematic = false;
-						currentObject.transform.position = holdScript.MugHolder.transform.position;
-						//Tell the player it's now empty and the machine is full
-						isHolding = false;
-						holdScript.setHolding(true);
-						holdScript.setMug(currentObject);
+						if (currentObject.tag == "Mug") {
+							//Set it in the machine
+							currentObject.transform.SetParent(null);
+							//currentObject.GetComponent<Collider>().attachedRigidbody.isKinematic = false;
+							currentObject.transform.position = holdScript.MugHolder.transform.position;
+							//Tell the player it's now empty and the machine is full
+							isHolding = false;
+							holdScript.setHolding(true);
+							holdScript.setMug(currentObject);
+						}
 					} else {
 						//Drop the mug
 						currentObject.transform.SetParent(null);

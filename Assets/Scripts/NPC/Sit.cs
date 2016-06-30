@@ -9,6 +9,7 @@ public class Sit : MonoBehaviour {
 
 	public void SetMugHolder() {
 		mugHolder = coaster.GetComponent<holdMug>();
+
 	}
 
 

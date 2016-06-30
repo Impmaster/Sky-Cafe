@@ -17,7 +17,7 @@ public class holdMug : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 		if (!isHolding) {
-			if (other.gameObject.name != "Player") {
+			if (other.gameObject.tag == "Mug") {
 				MugHolder.SetActive(true);
 				inTrigger = true;
 			}
@@ -28,7 +28,7 @@ public class holdMug : MonoBehaviour {
 
 	void OnTriggerExit(Collider other) {
 
-		if (other.gameObject.name != "Player") {
+		if (other.gameObject.tag == "Mug") {
 			MugHolder.SetActive(false);
 			inTrigger = false;
 			isHolding = false;
