@@ -121,6 +121,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredients: []
   numberOfIngredients: 4
+  warmTime: 5
+  coldTime: 10
+  timeSpent: 0
+  isFull: 0
+  currState: Hot
+  hotState: {fileID: 0}
+  warmState: {fileID: 0}
+  coldState: {fileID: 0}
 --- !u!136 &13680972
 CapsuleCollider:
   m_ObjectHideFlags: 1
