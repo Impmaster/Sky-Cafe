@@ -2918,14 +2918,6 @@ Prefab:
       value: 
       objectReference: {fileID: 1280929780}
     - target: {fileID: 11477662, guid: a95df343feab63c4f8255d924855d432, type: 2}
-      propertyPath: fsm.states.Array.data[4].actionData.fsmPropertyParams.Array.data[0].GameObjectParameter.useVariable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477662, guid: a95df343feab63c4f8255d924855d432, type: 2}
-      propertyPath: fsm.states.Array.data[4].actionData.fsmPropertyParams.Array.data[0].GameObjectParameter.name
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477662, guid: a95df343feab63c4f8255d924855d432, type: 2}
       propertyPath: fsm.states.Array.data[6].actionData.functionCallParams.Array.data[0].GameObjectParameter.value
       value: 
       objectReference: {fileID: 1527945900}

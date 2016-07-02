@@ -2245,9 +2245,9 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             typeName: UnityEngine.Object
-            value: {fileID: 0}
+            value: {fileID: 11453772}
           TargetTypeName: Sit
-          PropertyName: 
+          PropertyName: coaster
           BoolParameter:
             useVariable: 0
             name: 
@@ -2322,7 +2322,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            typeName: 
+            typeName: UnityEngine.GameObject
             value: {fileID: 0}
           MaterialParameter:
             useVariable: 0
@@ -2663,7 +2663,7 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             typeName: UnityEngine.Object
-            value: {fileID: 0}
+            value: {fileID: 11410652}
           TargetTypeName: Drink
           PropertyName: coaster
           BoolParameter:
@@ -2771,7 +2771,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            enumName: HutongGames.PlayMaker.None
+            enumName: 
             intValue: 0
           ArrayParameter:
             useVariable: 0
@@ -2780,7 +2780,7 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             type: -1
-            objectTypeName: UnityEngine.Object
+            objectTypeName: 
             floatValues: []
             intValues: 
             boolValues: 
@@ -2795,7 +2795,7 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             typeName: UnityEngine.Object
-            value: {fileID: 0}
+            value: {fileID: 11410652}
           TargetTypeName: Drink
           PropertyName: finishedDrinking
           BoolParameter:
@@ -2903,7 +2903,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            enumName: HutongGames.PlayMaker.None
+            enumName: 
             intValue: 0
           ArrayParameter:
             useVariable: 0
@@ -2912,7 +2912,7 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             type: -1
-            objectTypeName: UnityEngine.Object
+            objectTypeName: 
             floatValues: []
             intValues: 
             boolValues: 
