@@ -14,6 +14,7 @@ public class fly : MonoBehaviour {
 	
 	private FirstPersonController movementScript;
 	
+	[SerializeField]
 	private bool isFlying = false;
 	
 	private Camera cam;
@@ -88,6 +89,8 @@ public class fly : MonoBehaviour {
 				}
 			}
 			
+		} else {
+			isFlying = false;
 		}
 		
 

@@ -44,6 +44,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+
+        [SerializeField]
         private bool m_Flying;
 
         // Use this for initialization
@@ -114,13 +116,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
                                m_CharacterController.height/2f);
             desiredMove = Vector3.ProjectOnPlane(desiredMove, hitInfo.normal).normalized;
 
+            if (m_CharacterController.isGrounded) {
+                setFlying(false);
+            }
+
             //If just a regular jump, do regular movement, otherwise add momentum
             if (!m_Flying) {          
                 
                 //On the ground
                 if (m_CharacterController.isGrounded) {
                     m_MoveDir.x = desiredMove.x*speed;
-                    m_MoveDir.z = desiredMove.z*speed;    
+                    m_MoveDir.z = desiredMove.z*speed;   
                 } else { //Falling through the air
                     m_MoveDir.x += desiredMove.x*speed*m_flyModifier*Time.deltaTime;
                     m_MoveDir.z += desiredMove.z*speed*m_flyModifier*Time.deltaTime;
