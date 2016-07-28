@@ -1,0 +1,252 @@
+fileFormatVersion: 2
+guid: 4e47aa1867d703e42b67ea78ac8fc65c
+timeCreated: 1467440358
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armature
+    100002: //RootNode
+    100004: Bone_016
+    100006: Center
+    100008: Cube_005
+    100010: Head
+    100012: Left_Calf
+    100014: Left_Forearm
+    100016: Left_Humerous
+    100018: Left_Leg
+    100020: Left_Shoulder
+    100022: Left_Thigh
+    100024: Ribs
+    100026: Right_Calf
+    100028: Right_Forearm
+    100030: Right_Humerous
+    100032: Right_Leg
+    100034: Right_Shoulder
+    100036: Right_Thigh
+    100038: Waist
+    400000: Armature
+    400002: //RootNode
+    400004: Bone_016
+    400006: Center
+    400008: Cube_005
+    400010: Head
+    400012: Left_Calf
+    400014: Left_Forearm
+    400016: Left_Humerous
+    400018: Left_Leg
+    400020: Left_Shoulder
+    400022: Left_Thigh
+    400024: Ribs
+    400026: Right_Calf
+    400028: Right_Forearm
+    400030: Right_Humerous
+    400032: Right_Leg
+    400034: Right_Shoulder
+    400036: Right_Thigh
+    400038: Waist
+    4300000: Cube_005
+    7400000: OLDSIT
+    7400002: ArmatureAction_003
+    9500000: //RootNode
+    13700000: Cube_005
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: OLDSIT
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 79
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Left_Leg
+        weight: 1
+      - path: Armature/Left_Leg/Left_Thigh
+        weight: 1
+      - path: Armature/Left_Leg/Left_Thigh/Left_Calf
+        weight: 1
+      - path: Armature/Right_Leg
+        weight: 1
+      - path: Armature/Right_Leg/Right_Thigh
+        weight: 1
+      - path: Armature/Right_Leg/Right_Thigh/Right_Calf
+        weight: 1
+      - path: Armature/Waist
+        weight: 1
+      - path: Armature/Waist/Center
+        weight: 1
+      - path: Armature/Waist/Center/Ribs
+        weight: 1
+      - path: Armature/Waist/Center/Ribs/Head
+        weight: 1
+      - path: Armature/Waist/Center/Ribs/Head/Bone_016
+        weight: 1
+      - path: Armature/Waist/Center/Ribs/Left_Shoulder
+        weight: 1
+      - path: Armature/Waist/Center/Ribs/Left_Shoulder/Left_Humerous
+        weight: 1
+      - path: Armature/Waist/Center/Ribs/Left_Shoulder/Left_Humerous/Left_Forearm
+        weight: 1
+      - path: Armature/Waist/Center/Ribs/Right_Shoulder
+        weight: 1
+      - path: Armature/Waist/Center/Ribs/Right_Shoulder/Right_Humerous
+        weight: 1
+      - path: Armature/Waist/Center/Ribs/Right_Shoulder/Right_Humerous/Right_Forearm
+        weight: 1
+      - path: Cube_005
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: ArmatureAction_003
+      takeName: ArmatureAction_003
+      firstFrame: 0
+      lastFrame: 83
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Left_Leg
+        weight: 1
+      - path: Armature/Left_Leg/Left_Thigh
+        weight: 1
+      - path: Armature/Left_Leg/Left_Thigh/Left_Calf
+        weight: 1
+      - path: Armature/Right_Leg
+        weight: 1
+      - path: Armature/Right_Leg/Right_Thigh
+        weight: 1
+      - path: Armature/Right_Leg/Right_Thigh/Right_Calf
+        weight: 1
+      - path: Armature/Waist
+        weight: 1
+      - path: Armature/Waist/Center
+        weight: 1
+      - path: Armature/Waist/Center/Ribs
+        weight: 1
+      - path: Armature/Waist/Center/Ribs/Head
+        weight: 1
+      - path: Armature/Waist/Center/Ribs/Head/Bone_016
+        weight: 1
+      - path: Armature/Waist/Center/Ribs/Left_Shoulder
+        weight: 1
+      - path: Armature/Waist/Center/Ribs/Left_Shoulder/Left_Humerous
+        weight: 1
+      - path: Armature/Waist/Center/Ribs/Left_Shoulder/Left_Humerous/Left_Forearm
+        weight: 1
+      - path: Armature/Waist/Center/Ribs/Right_Shoulder
+        weight: 1
+      - path: Armature/Waist/Center/Ribs/Right_Shoulder/Right_Humerous
+        weight: 1
+      - path: Armature/Waist/Center/Ribs/Right_Shoulder/Right_Humerous/Right_Forearm
+        weight: 1
+      - path: Cube_005
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

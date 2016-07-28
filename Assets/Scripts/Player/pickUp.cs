@@ -49,7 +49,7 @@ public class pickUp : MonoBehaviour {
 					
 					//If the cup was in the machine, tell the machine it's now empty
 					if (holdScript != null) {
-						if (holdScript.trigger() && holdScript.holding() == false) {
+						if (holdScript.trigger() && holdScript.holding()) {
 							holdScript.setHolding(false);
 						} 
 
@@ -72,6 +72,7 @@ public class pickUp : MonoBehaviour {
 							currentObject.transform.SetParent(null);
 							//currentObject.GetComponent<Collider>().attachedRigidbody.isKinematic = false;
 							currentObject.transform.position = holdScript.MugHolder.transform.position;
+							currentObject.transform.rotation = holdScript.MugHolder.transform.rotation;
 							//Tell the player it's now empty and the machine is full
 							isHolding = false;
 							holdScript.setHolding(true);

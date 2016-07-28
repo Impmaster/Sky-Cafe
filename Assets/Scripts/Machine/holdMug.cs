@@ -37,12 +37,16 @@ public class holdMug : MonoBehaviour {
 		
 	}
 
+
 	public bool holding() {
 		return isHolding;
 	}
 	
 	public void setHolding(bool holding) {
 		isHolding = holding;
+		if (holding) {
+			MugHolder.SetActive(false);
+		}
 	}
 
 	public bool trigger() {

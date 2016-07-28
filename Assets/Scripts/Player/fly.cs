@@ -24,6 +24,9 @@ public class fly : MonoBehaviour {
 	private float timeFlying;
 
 	public AudioClip flySound;
+	ParticleSystem.EmissionModule em;
+
+	public ParticleSystem particles;
 
 	AudioSource audioSrc;
 	
@@ -36,11 +39,15 @@ public class fly : MonoBehaviour {
 		movementScript = GetComponent<FirstPersonController>();
 		cam = GetComponentInChildren<Camera>();
 		audioSrc = GetComponent<AudioSource>();
+		em = particles.emission;
+		em.enabled = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		em.enabled = false;
 		
+
 		//Only fly if already in the air
 		if (!isGrounded()) {
 			if (Input.GetKeyDown(KeyCode.Space)) {
@@ -52,6 +59,8 @@ public class fly : MonoBehaviour {
 			if (isFlying) {
 
 				if (Input.GetKey(KeyCode.Space)) {
+					em.enabled = true;
+
 					//Do sound effect
 					if (!audioSrc.isPlaying) {
 						audioSrc.clip = flySound;

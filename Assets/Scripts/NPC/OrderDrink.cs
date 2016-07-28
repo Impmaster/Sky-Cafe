@@ -7,6 +7,8 @@ public class OrderDrink : MonoBehaviour {
 	
 	public Canvas ui;
 
+	public Text text;
+
 	//Needs to be a panel on the Canvas
 	//A GridLayoutGroup on the Panel. Should be a component that is attached to inventory above.
 	public GridLayoutGroup grid;
@@ -23,8 +25,12 @@ public class OrderDrink : MonoBehaviour {
 	[SerializeField]
 	private LookAt lookAt;
 
+	[SerializeField]
 	bool isWaiting;
 	bool finished;
+
+	[SerializeField]
+	private string tip = "Press E to take order.";
 
 	// Use this for initialization
 	void Start () {
@@ -62,11 +68,20 @@ public class OrderDrink : MonoBehaviour {
 
 			if (lookAt.inFront(out hit, npcLayer)) {
 				if (hit.transform.gameObject == gameObject) {
+					text.text = tip;
+				}
+				if (hit.transform.gameObject == gameObject) {
+					
 					if (Input.GetKey(KeyCode.E)) {
 						isWaiting = false;
 						finished = true;
+						text.text = "";
 					}
 
+				}
+			} else {
+				if (text.text == tip) {
+					text.text = "";
 				}
 			}
 		}
