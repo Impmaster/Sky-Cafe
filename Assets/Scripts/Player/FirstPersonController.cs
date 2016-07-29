@@ -19,6 +19,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private float m_StickToGroundForce;
         [SerializeField] private float m_GravityMultiplier;
         [SerializeField] private float m_maxVel;
+        [SerializeField] private float jetpackFallOff;
         [SerializeField] private float m_flyModifier;
         [SerializeField] private MouseLook m_MouseLook;
         [SerializeField] private bool m_UseFovKick;
@@ -113,7 +114,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // get a normal for the surface that is being touched to move along it
             RaycastHit hitInfo;
             Physics.SphereCast(transform.position, m_CharacterController.radius, Vector3.down, out hitInfo,
-                               m_CharacterController.height/2f);
+                               m_CharacterController.height/2f, 0, QueryTriggerInteraction.Ignore);
             desiredMove = Vector3.ProjectOnPlane(desiredMove, hitInfo.normal).normalized;
 
             if (m_CharacterController.isGrounded) {
@@ -128,8 +129,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     m_MoveDir.x = desiredMove.x*speed;
                     m_MoveDir.z = desiredMove.z*speed;   
                 } else { //Falling through the air
-                    m_MoveDir.x += desiredMove.x*speed*m_flyModifier*Time.deltaTime;
-                    m_MoveDir.z += desiredMove.z*speed*m_flyModifier*Time.deltaTime;
+                    m_MoveDir.x += desiredMove.x*speed*m_flyModifier*Time.fixedDeltaTime;
+                    m_MoveDir.z += desiredMove.z*speed*m_flyModifier*Time.fixedDeltaTime;
             
                     float oldX = m_MoveDir.x;
                 
@@ -165,11 +166,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             else
             {
-                if (m_MoveDir.y > -m_maxVel*1.25) {
-                    m_MoveDir += Physics.gravity*m_GravityMultiplier*Time.fixedDeltaTime;
-                } else {
-                    m_MoveDir.y = -m_maxVel*1.25f;
+                //if (m_MoveDir.y > -m_maxVel*1.25) {
+                if (!m_Flying) {
+                    if (m_MoveDir.y > 0) {
+                        m_MoveDir -= new Vector3(0, jetpackFallOff*Time.fixedDeltaTime, 0);
+                    }
                 }
+                m_MoveDir += Physics.gravity*m_GravityMultiplier*Time.fixedDeltaTime;
+                /*} else {
+                    m_MoveDir.y = -m_maxVel*1.25f;
+                }*/
 
                                   
                 
