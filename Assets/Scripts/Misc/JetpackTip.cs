@@ -11,8 +11,12 @@ public class JetpackTip : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 		if (other.gameObject.name == "Player") {
-			text.text = "Hold Space when in the air to activate your jetpack.";
+			if (!Input.GetKey(KeyCode.Space)) {
+				text.text = "Hold Space when in the air to activate your jetpack.";
+
+			}
 			hasTriggered = true;
+			StartCoroutine(wait());
 		}
 	}
 
@@ -23,5 +27,10 @@ public class JetpackTip : MonoBehaviour {
 				gameObject.SetActive(false);
 			}
 		}
+	}
+
+	IEnumerator wait() {
+		yield return new WaitForSeconds(3);
+		text.text = "";
 	}
 }

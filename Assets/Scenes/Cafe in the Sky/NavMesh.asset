@@ -152,7 +152,7 @@ NavMeshData:
     m_Area: 2
     m_LinkDirection: 0
   - m_Start: {x: 8.75, y: 6.916748, z: 15.833334}
-    m_End: {x: 8.75, y: 3.1964135, z: 17.5}
+    m_End: {x: 8.75, y: 3.2070556, z: 17.5}
     m_Radius: 0.5
     m_LinkType: 1
     m_Area: 2

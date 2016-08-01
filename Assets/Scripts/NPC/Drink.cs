@@ -16,16 +16,22 @@ public class Drink : MonoBehaviour {
 	public int happiness;
 
 	public bool finishedDrinking;
+
+	public string isHot;
+
+	public bool rightIngredients;
 	
 	IEnumerator wait() {
 		yield return new WaitForSeconds(drinkTime);
 
 		if (mug.currState == "Hot") {
 			happiness++;
+			isHot = ("Hot");
 		} else if (mug.currState == "Warm") {
-			//Do nothing, it's fine.
+			isHot = ("Warm");
 		} else if (mug.currState == "Cold") {
 			happiness--;
+			isHot = ("Cold");
 		}
 
 		int mugCof = 0;
@@ -64,6 +70,7 @@ public class Drink : MonoBehaviour {
 		//If it's the wrong order happiness goes down.
 		if (mugCof != myCof || mugCre != myCre || mugMil != myMil || mugSug != mySug) {
 			happiness--;
+			rightIngredients = false;
 		}
 
 		finishedDrinking = true;

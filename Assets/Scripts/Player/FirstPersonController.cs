@@ -34,6 +34,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private Camera m_Camera;
         private bool m_Jump;
+        private bool canJump = true;
         private float m_YRotation;
         private Vector2 m_Input;
         [SerializeField] private Vector3 m_MoveDir = Vector3.zero;
@@ -156,12 +157,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_MoveDir.y = -m_StickToGroundForce;
 
-                if (m_Jump)
-                {
-                    m_MoveDir.y = m_JumpSpeed;
-                    PlayJumpSound();
+                if (canJump) {
+                    if (m_Jump)
+                    {
+                        m_MoveDir.y = m_JumpSpeed;
+                        PlayJumpSound();
+                        m_Jump = false;
+                        m_Jumping = true;
+                    }
+
+                } else {
                     m_Jump = false;
-                    m_Jumping = true;
                 }
             }
             else
@@ -320,6 +326,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public bool isJumping() {
             return m_Jumping;
         }
+
+        public bool isGrounded() {
+            return m_CharacterController.isGrounded;
+        }
         
         public void setFlying(bool answer) {
             m_Flying = answer;
@@ -333,6 +343,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_MoveDir.y = m_maxVel;
             }
             
+        }
+
+        public void setJump(bool answer) {
+            canJump = answer;
+
+        }
+
+        public Vector3 getMoveDir() {
+            return m_MoveDir;
         }
         
     }

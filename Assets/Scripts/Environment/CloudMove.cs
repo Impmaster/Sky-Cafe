@@ -14,7 +14,6 @@ public class CloudMove : MonoBehaviour
 
     Vector3 newPosition;
 
-    Vector3 oldPosition;
 
     void Start()
     {
@@ -40,7 +39,6 @@ public class CloudMove : MonoBehaviour
         pos = easeInOutSine(pos, 0, 1, 1);
 
         // Translate
-        oldPosition = newPosition;
         newPosition = _origin + axis * Distance * pos;
         transform.localPosition = newPosition;
 

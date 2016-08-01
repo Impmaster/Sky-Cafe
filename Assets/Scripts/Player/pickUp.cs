@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+ using UnityStandardAssets.Characters.FirstPerson;
 
 //MADE BY ALIX OLLIVIER
 
@@ -8,11 +9,17 @@ public class pickUp : MonoBehaviour {
 	public LookAt lookAt;
 	public holdMug holdScript;
 	//When the items Layer is created, it has to be changed here.
+
+	public int defaultLayer = 1;
 	public int itemsLayer = 8;
 	public int containersLayer = 9;
 	public GameObject holder;
 	private bool isHolding;
 	private GameObject currentObject;
+
+	public FirstPersonController controller;
+
+
 
 
 
@@ -45,6 +52,7 @@ public class pickUp : MonoBehaviour {
 					hit.collider.transform.gameObject.GetComponent<Collider>().attachedRigidbody.isKinematic = true;
 					//Start holding the object
 					currentObject = hit.collider.transform.gameObject;
+
 					isHolding = true;
 					
 					//If the cup was in the machine, tell the machine it's now empty
@@ -62,7 +70,28 @@ public class pickUp : MonoBehaviour {
 			}
 		} else { //Holding something
 
+			
+			
+			
+			//Gets the distance between the camera and the edge of the item
+			float itemDistance = Vector3.Distance(cam.transform.position, holder.transform.position + (holder.transform.position-cam.transform.position).normalized * currentObject.GetComponent<Collider>().bounds.extents.magnitude);
+			
+			//float offset = itemDistance - Vector3.Distance(cam.transform.position, holder.transform.position);			
+			//Moves it away from walls
+			if (lookAt.inFront(out hit, defaultLayer, itemDistance, holder)) {
+				currentObject.transform.position = hit.point + (cam.transform.position-holder.transform.position).normalized * currentObject.GetComponent<Collider>().bounds.extents.magnitude;
+			} else {
+				currentObject.transform.position = holder.transform.position;
+			}
+			currentObject.transform.rotation = holder.transform.rotation; 
+			
+
+			
+			
+
+
 			if (Input.GetKeyDown(KeyCode.E)) {
+
 				//Put the mug on the machine
 				if (holdScript != null) {
 					if (holdScript.trigger() && holdScript.holding() == false) {
@@ -80,6 +109,9 @@ public class pickUp : MonoBehaviour {
 						}
 					} else {
 						//Drop the mug
+						if (!controller.isGrounded()) {
+							currentObject.GetComponent<Rigidbody>().velocity = controller.getMoveDir();
+						}
 						currentObject.transform.SetParent(null);
 						currentObject.GetComponent<Collider>().attachedRigidbody.isKinematic = false;
 						isHolding = false;
@@ -87,6 +119,9 @@ public class pickUp : MonoBehaviour {
 					
 				}  else {
 					//Drop the mug
+					if (!controller.isGrounded()) {
+						currentObject.GetComponent<Rigidbody>().velocity = controller.getMoveDir();
+					}
 					currentObject.transform.SetParent(null);
 					currentObject.GetComponent<Collider>().attachedRigidbody.isKinematic = false;
 					isHolding = false;

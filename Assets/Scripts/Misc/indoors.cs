@@ -16,12 +16,14 @@ public class indoors : MonoBehaviour {
 			
 			movementScript = other.gameObject.GetComponent<FirstPersonController>();
 			movementScript.setFlying(false);
+			movementScript.setJump(false);
 		}
 	}
 	
 	void OnTriggerExit(Collider other) {
 		if (other.gameObject.name == "Player") {
 			flyScript.enabled = true;
+			movementScript.setJump(true);
 		}
 	}
 }
