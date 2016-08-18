@@ -29,7 +29,6 @@ GameObject:
   - 136: {fileID: 13680972}
   - 54: {fileID: 5407494}
   - 65: {fileID: 6557040}
-  - 143: {fileID: 14337174}
   m_Layer: 8
   m_Name: Mug
   m_TagString: Mug
@@ -72,7 +71,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 71fb0d7c1eca38641910081e1521817b, type: 2}
+  - {fileID: 2100000, guid: c36db240bdb6dcb4d87e47ab47349059, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -135,14 +134,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredients: []
   numberOfIngredients: 4
-  warmTime: 5
-  coldTime: 10
+  hotTime: 0
+  warmTime: 30
+  coldTime: 45
   timeSpent: 0
   isFull: 0
-  currState: Hot
-  hotState: {fileID: 0}
-  warmState: {fileID: 0}
-  coldState: {fileID: 0}
+  currState: Cold
+  hotState: {fileID: 2100000, guid: 71fb0d7c1eca38641910081e1521817b, type: 2}
+  warmState: {fileID: 2100000, guid: a153fccadfe25b648a206dab2d1ae56f, type: 2}
+  coldState: {fileID: 2100000, guid: 68abf19ca037a1a4998094a62883b53b, type: 2}
 --- !u!136 &13680972
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -155,23 +155,6 @@ CapsuleCollider:
   m_Radius: 0.101064205
   m_Height: 0.22399014
   m_Direction: 1
-  m_Center: {x: 0, y: -0.025, z: 0}
---- !u!143 &14337174
-CharacterController:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 144714}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Height: 0.2239901
-  m_Radius: 0.1010642
-  m_SlopeLimit: 180
-  m_StepOffset: 0
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0
   m_Center: {x: 0, y: -0.025, z: 0}
 --- !u!1001 &100100000
 Prefab:

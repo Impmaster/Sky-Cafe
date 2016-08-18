@@ -25,6 +25,7 @@ ModelImporter:
     100034: Right_Thigh
     100036: Sphere_001
     100038: Waist
+    100040: Armature
     400000: Armature_001
     400002: //RootNode
     400004: Bone_016
@@ -45,6 +46,7 @@ ModelImporter:
     400034: Right_Thigh
     400036: Sphere_001
     400038: Waist
+    400040: Armature
     4300000: Sphere_001
     7400000: BearSitting
     7400002: ArmatureAction_000
@@ -98,41 +100,41 @@ ModelImporter:
       transformMask:
       - path: 
         weight: 1
-      - path: Armature_001
+      - path: Armature
         weight: 1
-      - path: Armature_001/Left_Leg
+      - path: Armature/Left_Leg
         weight: 1
-      - path: Armature_001/Left_Leg/Left_Thigh
+      - path: Armature/Left_Leg/Left_Thigh
         weight: 1
-      - path: Armature_001/Left_Leg/Left_Thigh/Left_Calf
+      - path: Armature/Left_Leg/Left_Thigh/Left_Calf
         weight: 1
-      - path: Armature_001/Right_Leg
+      - path: Armature/Right_Leg
         weight: 1
-      - path: Armature_001/Right_Leg/Right_Thigh
+      - path: Armature/Right_Leg/Right_Thigh
         weight: 1
-      - path: Armature_001/Right_Leg/Right_Thigh/Right_Calf
+      - path: Armature/Right_Leg/Right_Thigh/Right_Calf
         weight: 1
-      - path: Armature_001/Waist
+      - path: Armature/Waist
         weight: 1
-      - path: Armature_001/Waist/Center
+      - path: Armature/Waist/Center
         weight: 1
-      - path: Armature_001/Waist/Center/Ribs
+      - path: Armature/Waist/Center/Ribs
         weight: 1
-      - path: Armature_001/Waist/Center/Ribs/Head
+      - path: Armature/Waist/Center/Ribs/Head
         weight: 1
-      - path: Armature_001/Waist/Center/Ribs/Head/Bone_016
+      - path: Armature/Waist/Center/Ribs/Head/Bone_016
         weight: 1
-      - path: Armature_001/Waist/Center/Ribs/Left_Shoulder
+      - path: Armature/Waist/Center/Ribs/Left_Shoulder
         weight: 1
-      - path: Armature_001/Waist/Center/Ribs/Left_Shoulder/Left_Humerous
+      - path: Armature/Waist/Center/Ribs/Left_Shoulder/Left_Humerous
         weight: 1
-      - path: Armature_001/Waist/Center/Ribs/Left_Shoulder/Left_Humerous/Left_Forearm
+      - path: Armature/Waist/Center/Ribs/Left_Shoulder/Left_Humerous/Left_Forearm
         weight: 1
-      - path: Armature_001/Waist/Center/Ribs/Right_Shoulder
+      - path: Armature/Waist/Center/Ribs/Right_Shoulder
         weight: 1
-      - path: Armature_001/Waist/Center/Ribs/Right_Shoulder/Right_Humerous
+      - path: Armature/Waist/Center/Ribs/Right_Shoulder/Right_Humerous
         weight: 1
-      - path: Armature_001/Waist/Center/Ribs/Right_Shoulder/Right_Humerous/Right_Forearm
+      - path: Armature/Waist/Center/Ribs/Right_Shoulder/Right_Humerous/Right_Forearm
         weight: 1
       - path: Sphere_001
         weight: 1

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 60c6443165bf54542892111d5fb51fd1
-timeCreated: 1467528327
+guid: 1a4325964d84b7143a6c1034f8cf4624
+timeCreated: 1470798734
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -25,6 +25,7 @@ ModelImporter:
     100034: Right_Thigh
     100036: Sphere_001
     100038: Waist
+    100040: Armature
     400000: Armature_001
     400002: //RootNode
     400004: Bone_016
@@ -45,6 +46,7 @@ ModelImporter:
     400034: Right_Thigh
     400036: Sphere_001
     400038: Waist
+    400040: Armature
     4300000: Sphere_001
     7400000: BearIdle
     7400002: ArmatureAction_000
@@ -64,7 +66,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -232,228 +234,8 @@ ModelImporter:
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
-    human:
-    - boneName: Armature_001
-      humanName: Hips
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Left_Thigh
-      humanName: LeftUpperLeg
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Right_Thigh
-      humanName: RightUpperLeg
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Left_Calf
-      humanName: LeftLowerLeg
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Right_Calf
-      humanName: RightLowerLeg
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Center
-      humanName: Spine
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Ribs
-      humanName: Chest
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Head
-      humanName: Head
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Left_Shoulder
-      humanName: LeftShoulder
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Right_Shoulder
-      humanName: RightShoulder
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Left_Humerous
-      humanName: LeftUpperArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Right_Humerous
-      humanName: RightUpperArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Left_Forearm
-      humanName: LeftLowerArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Right_Forearm
-      humanName: RightLowerArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Bone_016
-      humanName: RightEye
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    skeleton:
-    - name: BearIdle(Clone)
-      position: {x: 0, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
-    - name: Armature_001
-      position: {x: 0, y: 1.9356085, z: -0.19671924}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
-    - name: Waist
-      position: {x: 0, y: 0, z: 0}
-      rotation: {x: 0.50000006, y: 0.49999997, z: -0.49999997, w: 0.50000006}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
-    - name: Center
-      position: {x: -0.67323756, y: 0.000000050828024, z: 0}
-      rotation: {x: 0.00000011575859, y: -0.04416493, z: 0.0000000052648708, w: 0.9990243}
-      scale: {x: 0.99999994, y: 1, z: 1}
-      transformModified: 1
-    - name: Ribs
-      position: {x: -0.89048374, y: 0.00000006722965, z: 0.00000000372529}
-      rotation: {x: -0.000000113701546, y: 0.069169894, z: -0.0000000082456975, w: 0.9976049}
-      scale: {x: 0.99999994, y: 1, z: 1}
-      transformModified: 1
-    - name: Left_Shoulder
-      position: {x: -1.5702968, y: 0.00000011855411, z: 0.000000001346052}
-      rotation: {x: 0.4198293, y: 0.60602117, z: -0.5429279, w: -0.4021331}
-      scale: {x: 1, y: 1.0000001, z: 1.0000001}
-      transformModified: 1
-    - name: Left_Humerous
-      position: {x: -1.1365379, y: 0.00000008195639, z: -0.00000016065314}
-      rotation: {x: -0.7044878, y: 0.07695219, z: 0.12057746, w: 0.6951521}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
-    - name: Left_Forearm
-      position: {x: -1.2155316, y: 0.000000044703484, z: 3.9482e-10}
-      rotation: {x: 0.00000004217056, y: 0.0000000128594095, z: -0.26089182, w: 0.96536803}
-      scale: {x: 1, y: 0.99999994, z: 1}
-      transformModified: 1
-    - name: Right_Shoulder
-      position: {x: -1.5702968, y: 0.00000011855411, z: 0.000000001346052}
-      rotation: {x: -0.41982907, y: 0.6060213, z: 0.5429279, w: -0.4021331}
-      scale: {x: 1, y: 1.0000001, z: 1}
-      transformModified: 1
-    - name: Right_Humerous
-      position: {x: -1.1365379, y: 0.000000074505806, z: 0.000000077765435}
-      rotation: {x: 0.70448786, y: 0.076951854, z: -0.1205774, w: 0.6951521}
-      scale: {x: 1.0000001, y: 1, z: 1}
-      transformModified: 1
-    - name: Right_Forearm
-      position: {x: -1.2155316, y: 0.00000031286618, z: -0.000000006613714}
-      rotation: {x: -0.00000004188291, y: 0.0000000152341, z: 0.26089182, w: 0.96536803}
-      scale: {x: 1, y: 0.99999994, z: 1}
-      transformModified: 1
-    - name: Head
-      position: {x: -1.5702968, y: 0.00000011855411, z: 0.000000001346052}
-      rotation: {x: -0.0000000037128045, y: -0.049177222, z: 2.417655e-16, w: 0.9987901}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
-    - name: Bone_016
-      position: {x: -1.9809778, y: 0.0000001495597, z: 0}
-      rotation: {x: -0.387032, y: -0.000000059142106, z: 0.92206633, w: -0.000000024824555}
-      scale: {x: 0.99999964, y: 1, z: 0.9999997}
-      transformModified: 1
-    - name: Left_Leg
-      position: {x: 0, y: 0, z: 0}
-      rotation: {x: -0.00000007143025, y: -0.20499547, z: 0.000000023607427, w: 0.9787629}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
-    - name: Left_Thigh
-      position: {x: -0.9638757, y: 0.0000000727706, z: 0.000000029802322}
-      rotation: {x: -0.5918792, y: -0.38688365, z: -0.3868837, w: 0.59187925}
-      scale: {x: 0.99999976, y: 0.9999998, z: 0.99999994}
-      transformModified: 1
-    - name: Left_Calf
-      position: {x: -0.71943223, y: -0.000000029360791, z: -3e-15}
-      rotation: {x: 0.00000002618403, y: -2.8710665e-15, z: 6.6497046e-15, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
-    - name: Right_Leg
-      position: {x: 0, y: 0, z: 0}
-      rotation: {x: 0.20499547, y: 0.000000074801896, z: 0.9787629, w: -0.0000001402798}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
-    - name: Right_Thigh
-      position: {x: -0.9638757, y: 0.0000000727706, z: 0.000000029802322}
-      rotation: {x: 0.5918791, y: -0.38688374, z: 0.3868837, w: 0.5918793}
-      scale: {x: 0.99999976, y: 0.9999998, z: 0.99999994}
-      transformModified: 1
-    - name: Right_Calf
-      position: {x: -0.7194322, y: 0.00000013679072, z: -3e-15}
-      rotation: {x: -0.000000026184031, y: 1.3264502e-15, z: 4.537856e-16, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
-    - name: Sphere_001
-      position: {x: 0.019663274, y: -0.21461552, z: 1.6680471}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
+    human: []
+    skeleton: []
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -464,7 +246,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 3
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

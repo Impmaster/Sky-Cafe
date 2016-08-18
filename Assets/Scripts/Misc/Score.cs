@@ -11,6 +11,8 @@ public class Score : MonoBehaviour {
 
 	public Text rightIngredientsText;
 
+	public float hoverTime = 3;
+
 	public int score;
 
 	public int HotPoints = 5;
@@ -26,19 +28,19 @@ public class Score : MonoBehaviour {
 		
 		if (isHot == "Hot") {
 			score += HotPoints;
-			isHotText.text = "Mug was " + isHot + ". +" + HotPoints + " points.";
+			isHotText.text = "Mug was " + isHot + ". " + HotPoints + " points.";
 		} else if (isHot == "Warm") {
 			score += WarmPoints;
-			isHotText.text = "Mug was " + isHot + ". +" + WarmPoints + " points.";
+			isHotText.text = "Mug was " + isHot + ". " + WarmPoints + " points.";
 		} else if (isHot == "Cold") {
 			score += ColdPoints;
-			isHotText.text = "Mug was " + isHot + ". +" + ColdPoints + " points.";
+			isHotText.text = "Mug was " + isHot + ". " + ColdPoints + " points.";
 		}
 
 		if (rightIngredients) {
-			rightIngredientsText.text = "Perfect Blend. +" + rightIngredientsPoints + " points.";
+			rightIngredientsText.text = "Perfect Blend. " + rightIngredientsPoints + " points.";
 		} else {
-			rightIngredientsText.text = "Wrong Coffee Ingredients! +" + wrongIngredientsPoints + " points.";
+			rightIngredientsText.text = "Wrong Coffee Ingredients! " + wrongIngredientsPoints + " points.";
 		}
 
 		if (rightIngredients) {
@@ -48,5 +50,15 @@ public class Score : MonoBehaviour {
 		}
 
 		text.text = score.ToString();
+
+		StartCoroutine(ClearText());
+	}
+
+	IEnumerator ClearText() {
+		yield return new WaitForSeconds(hoverTime);
+		isHotText.text = "";
+		rightIngredientsText.text = "";
+		
+
 	}
 }

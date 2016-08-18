@@ -6,6 +6,8 @@ public class mugInventory : MonoBehaviour {
 	public string[] ingredients;
 	public int numberOfIngredients = 4;
 
+	public float hotTime = 0f;
+
 	public float warmTime = 30f;
 	public float coldTime = 45f;
 
@@ -13,7 +15,7 @@ public class mugInventory : MonoBehaviour {
 	public float timeSpent;
 	public bool isFull;
 
-	public string currState = "Hot";
+	public string currState = "Cold";
 
 	public Material hotState;
 	public Material warmState;
@@ -23,6 +25,17 @@ public class mugInventory : MonoBehaviour {
 
 	void Start() {
 		ingredients = new string[numberOfIngredients];
+	}
+
+	public void Finish() {
+		for (int x = 0; x < numberOfIngredients; x++) {
+			ingredients[x] = null;
+			
+		}
+		timeSpent = 0;
+		isFull = false;
+		currState = "Cold";
+		currNum = 0;
 	}
 
 	public void addIngredient(string name) {
@@ -45,13 +58,19 @@ public class mugInventory : MonoBehaviour {
 
 			timeSpent = Time.time - startTime;
 
+			if (timeSpent < warmTime) {
+				currState = "Hot";
+				gameObject.GetComponentInChildren<Renderer>().material = hotState;
+			}
+
 			if (timeSpent > warmTime) {
 				currState = "Warm";
-				//gameObject.GetComponentInChildren<Renderer>().;
+				gameObject.GetComponentInChildren<Renderer>().material = warmState;
 			}
 
 			if (timeSpent > coldTime) {
 				currState = "Cold";
+				gameObject.GetComponentInChildren<Renderer>().material = coldState;
 			}
 		}
 

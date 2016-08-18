@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 4bb0cc9b3a7253b468dfb40e1c568bc2
-timeCreated: 1467528326
+guid: dd3436afe972d76478b1a32ee64da724
+timeCreated: 1470109910
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -74,7 +74,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -143,10 +143,6 @@ ModelImporter:
       - path: Armature/Waist/Center/Ribs/Right_Shoulder/Right_Humerous
         weight: 1
       - path: Armature/Waist/Center/Ribs/Right_Shoulder/Right_Humerous/Right_Forearm
-        weight: 1
-      - path: Plane_000
-        weight: 1
-      - path: Plane_003
         weight: 1
       - path: Sphere_001
         weight: 1
@@ -261,7 +257,8 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
     hasTranslationDoF: 0
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 1a4325964d84b7143a6c1034f8cf4624,
+    type: 3}
   animationType: 2
   humanoidOversampling: 1
   additionalBone: 0

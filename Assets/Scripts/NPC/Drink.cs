@@ -73,13 +73,16 @@ public class Drink : MonoBehaviour {
 			rightIngredients = false;
 		}
 
+
 		finishedDrinking = true;
 	}
 
 	void drink() {
 
+
 		mugHolder = coaster.GetComponent<holdMug>();
 		mug = mugHolder.mug.GetComponent<mugInventory>();
+		mug.Finish();
 
 		StartCoroutine(wait());
 		
