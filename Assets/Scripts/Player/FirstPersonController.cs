@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
@@ -13,7 +13,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
-        [SerializeField] private float m_airSpeedMult;
         [SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
         [SerializeField] private float m_JumpSpeed;
         [SerializeField] private float m_StickToGroundForce;
@@ -47,8 +46,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+        bool hasFlied;
+        public AudioSource fallingSound;
+
         [SerializeField]
         private bool m_Flying;
+
+        public float SoundFadeSpeed = 0.0001f;
 
         // Use this for initialization
         private void Start()
@@ -64,6 +68,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Flying = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+            fallingSound.volume = 0;
         }
 
 
@@ -76,6 +81,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 if (m_CharacterController.isGrounded) {
                    m_Jump = CrossPlatformInputManager.GetButtonDown("Jump"); 
+
+                   if (hasFlied) {
+                        StartCoroutine(fadeFallSound());
+                        hasFlied = false;
+                   }
+
                 }
                 
             }
@@ -94,6 +105,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
         }
+
+        public IEnumerator fadeFallSound() {
+            for (float x = fallingSound.volume; x > 0; x -= SoundFadeSpeed) {
+                fallingSound.volume -= SoundFadeSpeed;
+                yield return null;
+            }
+        }
+
+
 
 
         private void PlayLandingSound()
@@ -140,6 +160,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 }
             //Jetpacking                              
             } else {
+                hasFlied = true;
                 
                 m_MoveDir.x += desiredMove.x*speed*m_flyModifier*Time.deltaTime;
                 m_MoveDir.z += desiredMove.z*speed*m_flyModifier*Time.deltaTime;
@@ -149,6 +170,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_MoveDir.x = Vector2.ClampMagnitude(new Vector2(m_MoveDir.x, m_MoveDir.z), m_RunSpeed).x;
                 m_MoveDir.z = Vector2.ClampMagnitude(new Vector2(oldX, m_MoveDir.z), m_RunSpeed).y;
 
+                
             }
 
 
@@ -179,6 +201,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     }
                 }
                 m_MoveDir += Physics.gravity*m_GravityMultiplier*Time.fixedDeltaTime;
+
+                fallingSound.volume = -(m_MoveDir.y+10)/10;
                 /*} else {
                     m_MoveDir.y = -m_maxVel*1.25f;
                 }*/

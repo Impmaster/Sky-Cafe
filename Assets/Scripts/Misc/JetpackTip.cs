@@ -12,7 +12,7 @@ public class JetpackTip : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		if (other.gameObject.name == "Player") {
 			if (!Input.GetKey(KeyCode.Space)) {
-				text.text = "Hold Space when in the air to activate your jetpack.";
+				text.text = "Double Jump and hold to activate your jetpack.";
 
 			}
 			hasTriggered = true;

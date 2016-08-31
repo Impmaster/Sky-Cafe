@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.Audio;
 using UnityStandardAssets.Characters.FirstPerson;
+using System.Collections;
 
 
 public class fly : MonoBehaviour {
@@ -8,9 +10,9 @@ public class fly : MonoBehaviour {
 	
 	public float speed = 0;
 	
-	public float accel = 2;
+	public float accel = 5;
 	
-	public float maxSpeed = 20;
+	public float maxSpeed = 30;
 	
 	private FirstPersonController movementScript;
 	
@@ -29,6 +31,7 @@ public class fly : MonoBehaviour {
 	public ParticleSystem particles;
 
 	AudioSource audioSrc;
+	public float SoundFadeSpeed = 0.0001f;
 	
 
 	
@@ -84,7 +87,7 @@ public class fly : MonoBehaviour {
 				} else {
 					//Turn off sound
 					if (audioSrc.isPlaying) {
-						audioSrc.Stop();
+						StartCoroutine(jetpackSound());
 					}
 
 
@@ -104,6 +107,21 @@ public class fly : MonoBehaviour {
 		
 
 	}
+
+		IEnumerator jetpackSound() {
+            float originalVolume = audioSrc.volume;
+            for (float x = audioSrc.volume; x > 0; x -= SoundFadeSpeed) {
+                audioSrc.volume -= SoundFadeSpeed;
+
+				if (isGrounded()) {
+					audioSrc.volume = originalVolume;
+					break;
+				}
+                yield return null;
+            }
+            audioSrc.volume = originalVolume;
+            audioSrc.Stop();
+        }
 	
 	
 	//Sends a raycast straight down to check if the player is on the ground.

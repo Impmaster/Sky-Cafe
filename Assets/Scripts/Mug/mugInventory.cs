@@ -27,6 +27,7 @@ public class mugInventory : MonoBehaviour {
 		ingredients = new string[numberOfIngredients];
 	}
 
+	//Resets the mug
 	public void Finish() {
 		for (int x = 0; x < numberOfIngredients; x++) {
 			ingredients[x] = null;

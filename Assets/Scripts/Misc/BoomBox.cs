@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class BoomBox : MonoBehaviour {
 
 	public LookAt lookAt;
+
+	public Text text;
 	AudioSource audioSrc;
+
+	public string tip = "Press E to turn on the music.";
 
 	public AudioClip song;
 
@@ -20,6 +25,7 @@ public class BoomBox : MonoBehaviour {
 
 		if (lookAt.inFront(out hit)) {
 			if (hit.transform.name == this.name) {
+				text.text = tip;
 				if (Input.GetKeyDown(KeyCode.E)) {
 					//If it's activated
 
@@ -28,6 +34,10 @@ public class BoomBox : MonoBehaviour {
 					} else audioSrc.Play();
 
 				}
+			}
+		} else {
+			if (text.text == tip) {
+				text.text = "";
 			}
 		}
 	

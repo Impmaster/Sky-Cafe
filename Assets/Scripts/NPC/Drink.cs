@@ -67,10 +67,13 @@ public class Drink : MonoBehaviour {
 			}
 
 		}
+
 		//If it's the wrong order happiness goes down.
 		if (mugCof != myCof || mugCre != myCre || mugMil != myMil || mugSug != mySug) {
 			happiness--;
 			rightIngredients = false;
+		} else {
+			rightIngredients = true;
 		}
 
 
@@ -82,7 +85,6 @@ public class Drink : MonoBehaviour {
 
 		mugHolder = coaster.GetComponent<holdMug>();
 		mug = mugHolder.mug.GetComponent<mugInventory>();
-		mug.Finish();
 
 		StartCoroutine(wait());
 		

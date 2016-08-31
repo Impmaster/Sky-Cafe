@@ -7,16 +7,21 @@ public class indoors : MonoBehaviour {
 	private fly flyScript;
 	
 	private FirstPersonController movementScript;
+
+
 	
 	
 	void OnTriggerEnter(Collider other) {
 		if (other.gameObject.name == "Player") {
 			flyScript = other.gameObject.GetComponent<fly>();
+			
 			flyScript.enabled = false;
 			
 			movementScript = other.gameObject.GetComponent<FirstPersonController>();
 			movementScript.setFlying(false);
 			movementScript.setJump(false);
+			StartCoroutine(movementScript.fadeFallSound());
+
 		}
 	}
 	

@@ -33,13 +33,13 @@ Material:
       data:
         first:
           name: _Solid
-        second: 1
+        second: 0
       data:
         first:
           name: _GradientStrengthModifier
-        second: 2.5
+        second: 1
     m_Colors:
       data:
         first:
           name: _OutlineCol
-        second: {r: 1, g: 0, b: 1, a: 1}
+        second: {r: 0, g: 0, b: 0, a: 0}
