@@ -4,6 +4,8 @@ using System.Collections;
 public class buttonActivate : MonoBehaviour {
 
 
+	public GameObject liquid;
+	private AudioSource src;
 	public holdMug machineScript;
 	public LookAt lookAt;
 	public string type;
@@ -17,6 +19,8 @@ public class buttonActivate : MonoBehaviour {
 	void Start() {
 		originalLocation = transform.localPosition;
 		pushedLocation = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z + pushDistance);
+		liquid.SetActive(false);
+		src = GetComponent<AudioSource>();
 	}
 
 	
@@ -47,12 +51,14 @@ public class buttonActivate : MonoBehaviour {
 		if (machineScript.holding()) {
 			mugHolder = machineScript.getMug().GetComponent<mugInventory>();
 			mugHolder.addIngredient(type);
-
+			liquid.SetActive(true);
+			src.Play();
 		}
 	}
 
 	void Undo() {
 		transform.localPosition = originalLocation;
+		liquid.SetActive(false);
 	}
 
 }

@@ -103,6 +103,8 @@ public class OrderDrink : MonoBehaviour {
 		GameObject MilkVar = currentOrder.transform.Find("Milk/MilkVar").gameObject;
 		GameObject SugarVar = currentOrder.transform.Find("Sugar/SugarVar").gameObject;
 
+		GameObject name = currentOrder.transform.Find("Name").gameObject;
+
 		int numCof = 0;
 		int numCream = 0;
 		int numMilk = 0;
@@ -127,6 +129,8 @@ public class OrderDrink : MonoBehaviour {
 			
 			
 		}
+
+		name.GetComponent<Text>().text = starbucksName;
 		
 		CoffeeVar.GetComponent<Text>().text = numCof.ToString();
 		CreamVar.GetComponent<Text>().text = numCream.ToString();
@@ -142,18 +146,14 @@ public class OrderDrink : MonoBehaviour {
 		if (isWaiting) {
 			RaycastHit hit;
 
-			if (lookAt.inFront(out hit, npcLayer)) {
+			if (lookAt.inFront(out hit)) {
 				if (hit.transform.gameObject == gameObject) {
 					text.text = tip;
-				}
-				if (hit.transform.gameObject == gameObject) {
-					
 					if (Input.GetKey(KeyCode.E)) {
 						isWaiting = false;
 						finished = true;
 						text.text = "";
 					}
-
 				}
 			} else {
 				if (text.text == tip) {
