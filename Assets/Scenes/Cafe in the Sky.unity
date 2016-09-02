@@ -3087,6 +3087,10 @@ Prefab:
       propertyPath: starbucksName
       value: Brice
       objectReference: {fileID: 0}
+    - target: {fileID: 11477662, guid: a95df343feab63c4f8255d924855d432, type: 2}
+      propertyPath: fsm.preprocessed
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a95df343feab63c4f8255d924855d432, type: 2}
   m_IsPrefabParent: 0
@@ -11862,6 +11866,14 @@ Prefab:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 11481238, guid: a95df343feab63c4f8255d924855d432, type: 2}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 818388929}
+    - target: {fileID: 11481238, guid: a95df343feab63c4f8255d924855d432, type: 2}
+      propertyPath: orderList
+      value: 
+      objectReference: {fileID: 1554536015}
+    - target: {fileID: 11481238, guid: a95df343feab63c4f8255d924855d432, type: 2}
       propertyPath: ingredientsArray
       value: 
       objectReference: {fileID: 466569453}
@@ -11870,14 +11882,6 @@ Prefab:
       value: 
       objectReference: {fileID: 1890485926}
     - target: {fileID: 11477662, guid: a95df343feab63c4f8255d924855d432, type: 2}
-      propertyPath: fsm.states.Array.data[0].actionData.functionCallParams.Array.data[0].GameObjectParameter.value
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477662, guid: a95df343feab63c4f8255d924855d432, type: 2}
-      propertyPath: fsm.states.Array.data[1].actionData.functionCallParams.Array.data[0].GameObjectParameter.value
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477662, guid: a95df343feab63c4f8255d924855d432, type: 2}
       propertyPath: fsm.states.Array.data[3].actionData.fsmObjectParams.Array.data[0].value
       value: 
       objectReference: {fileID: 1280929780}
@@ -11885,109 +11889,9 @@ Prefab:
       propertyPath: fsm.states.Array.data[6].actionData.functionCallParams.Array.data[0].GameObjectParameter.value
       value: 
       objectReference: {fileID: 1527945900}
-    - target: {fileID: 11477662, guid: a95df343feab63c4f8255d924855d432, type: 2}
-      propertyPath: fsm.states.Array.data[7].actionData.functionCallParams.Array.data[0].GameObjectParameter.value
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 185368, guid: a95df343feab63c4f8255d924855d432, type: 2}
       propertyPath: m_Name
       value: NPC (14)
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477662, guid: a95df343feab63c4f8255d924855d432, type: 2}
-      propertyPath: fsm.states.Array.data[2].actionData.fsmGameObjectParams.Array.data[0].value
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 11481238, guid: a95df343feab63c4f8255d924855d432, type: 2}
-      propertyPath: text
-      value: 
-      objectReference: {fileID: 818388929}
-    - target: {fileID: 11477662, guid: a95df343feab63c4f8255d924855d432, type: 2}
-      propertyPath: fsm.states.Array.data[6].actionData.fsmObjectParams.Array.data[0].value
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Avatar
-      value: 
-      objectReference: {fileID: 9000000, guid: 60c6443165bf54542892111d5fb51fd1, type: 3}
-    - target: {fileID: 185368, guid: a95df343feab63c4f8255d924855d432, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477662, guid: a95df343feab63c4f8255d924855d432, type: 2}
-      propertyPath: fsm.states.Array.data[6].actionData.functionCallParams.Array.data[1].GameObjectParameter.value
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477662, guid: a95df343feab63c4f8255d924855d432, type: 2}
-      propertyPath: fsm.states.Array.data[3].actionData.fsmObjectParams.Array.data[1].value
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 11481238, guid: a95df343feab63c4f8255d924855d432, type: 2}
-      propertyPath: orderList
-      value: 
-      objectReference: {fileID: 1554536015}
-    - target: {fileID: 11477662, guid: a95df343feab63c4f8255d924855d432, type: 2}
-      propertyPath: fsm.states.Array.data[2].actionData.fsmPropertyParams.Array.data[0].PropertyName
-      value: isEmpty
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477662, guid: a95df343feab63c4f8255d924855d432, type: 2}
-      propertyPath: fsm.states.Array.data[2].actionData.fsmPropertyParams.Array.data[0].ObjectParameter.typeName
-      value: System.Boolean
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477662, guid: a95df343feab63c4f8255d924855d432, type: 2}
-      propertyPath: fsm.states.Array.data[2].actionData.fsmPropertyParams.Array.data[0].EnumParameter.enumName
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477662, guid: a95df343feab63c4f8255d924855d432, type: 2}
-      propertyPath: fsm.states.Array.data[2].actionData.fsmPropertyParams.Array.data[0].ArrayParameter.objectTypeName
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477662, guid: a95df343feab63c4f8255d924855d432, type: 2}
-      propertyPath: fsm.states.Array.data[11].actionData.fsmPropertyParams.Array.data[0].PropertyName
-      value: isEmpty
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477662, guid: a95df343feab63c4f8255d924855d432, type: 2}
-      propertyPath: fsm.states.Array.data[11].actionData.fsmPropertyParams.Array.data[0].BoolParameter.useVariable
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477662, guid: a95df343feab63c4f8255d924855d432, type: 2}
-      propertyPath: fsm.states.Array.data[11].actionData.fsmPropertyParams.Array.data[0].BoolParameter.name
-      value: canMove
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477662, guid: a95df343feab63c4f8255d924855d432, type: 2}
-      propertyPath: fsm.states.Array.data[11].actionData.fsmPropertyParams.Array.data[0].ObjectParameter.typeName
-      value: System.Boolean
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477662, guid: a95df343feab63c4f8255d924855d432, type: 2}
-      propertyPath: fsm.states.Array.data[11].actionData.fsmPropertyParams.Array.data[1].PropertyName
-      value: isEmpty
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477662, guid: a95df343feab63c4f8255d924855d432, type: 2}
-      propertyPath: fsm.states.Array.data[11].actionData.fsmPropertyParams.Array.data[1].ObjectParameter.typeName
-      value: System.Boolean
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477662, guid: a95df343feab63c4f8255d924855d432, type: 2}
-      propertyPath: fsm.states.Array.data[8].actionData.fsmGameObjectParams.Array.data[2].name
-      value: Coaster
-      objectReference: {fileID: 0}
-    - target: {fileID: 11481238, guid: a95df343feab63c4f8255d924855d432, type: 2}
-      propertyPath: realName
-      value: Yang
-      objectReference: {fileID: 0}
-    - target: {fileID: 11481238, guid: a95df343feab63c4f8255d924855d432, type: 2}
-      propertyPath: starbucksName
-      value: Yeang
-      objectReference: {fileID: 0}
-    - target: {fileID: 420038, guid: a95df343feab63c4f8255d924855d432, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 420038, guid: a95df343feab63c4f8255d924855d432, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11481238, guid: a95df343feab63c4f8255d924855d432, type: 2}
-      propertyPath: ingredients.Array.data[1]
-      value: Coffee
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a95df343feab63c4f8255d924855d432, type: 2}
@@ -14668,7 +14572,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 1
+      value: 0.96
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -15759,7 +15663,7 @@ MonoBehaviour:
   - {fileID: 1032158060}
   - {fileID: 972835709}
   timeBetween: 15
-  startTime: 0
+  startTime: 30
   lastBarPosition: {fileID: 93232204}
 --- !u!1 &1436478091
 GameObject:
@@ -16696,7 +16600,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 16
+          value: 15
         fsmBoolParams: []
         fsmVector2Params: []
         fsmVector3Params: []
@@ -16707,7 +16611,7 @@ MonoBehaviour:
         - FINISHED
         - 
         - 
-        byteData: 0100
+        byteData: 0101
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
@@ -16748,6 +16652,9 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
+        - HutongGames.PlayMaker.Actions.FindGameObject
+        - HutongGames.PlayMaker.Actions.GetComponent
+        - HutongGames.PlayMaker.Actions.GetComponent
         - HutongGames.PlayMaker.Actions.GetProperty
         - HutongGames.PlayMaker.Actions.CallMethod
         - HutongGames.PlayMaker.Actions.Wait
@@ -16755,13 +16662,38 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 000000000200000008000000
-        actionHashCodes: 5ac852043535530448c01101
+        - 
+        - 
+        - 
+        actionEnabled: 010101010101
+        actionIsOpen: 010101010101
+        actionStartIndex: 000000000300000006000000090000000b00000011000000
+        actionHashCodes: 786b390204d8140204d814025ac852043535530448c01101
         unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: Score
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Score
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Score
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
@@ -16906,6 +16838,18 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
+          value: ScoreManager
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Untagged
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
           value: showScore
         fsmObjectParams:
         - useVariable: 1
@@ -16915,8 +16859,22 @@ MonoBehaviour:
           networkSync: 0
           typeName: Score
           value: {fileID: 0}
+        - useVariable: 1
+          name: EndScore
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: EndScore
+          value: {fileID: 0}
+        - useVariable: 1
+          name: EndScore
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: EndScore
+          value: {fileID: 0}
         fsmVarParams:
-        - variableName: 
+        - variableName: score
           objectType: UnityEngine.Object
           useVariable: 1
           type: 1
@@ -16982,14 +16940,23 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - FINISHED
-        byteData: 000000
+        byteData: 0000000000
         arrayParamSizes: 01000000
         arrayParamTypes:
         - HutongGames.PlayMaker.FsmVar
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 240000000100000018000000120000000c0000002700000027000000010000000f0000001700000001000000
+        paramDataType: 120000001200000013000000140000001800000001000000140000001800000001000000240000000100000018000000120000000c0000002700000027000000010000000f0000001700000001000000
         paramName:
+        - objectName
+        - withTag
+        - store
+        - gameObject
+        - storeComponent
+        - everyFrame
+        - gameObject
+        - storeComponent
+        - everyFrame
         - targetProperty
         - everyFrame
         - behaviour
@@ -17001,8 +16968,8 @@ MonoBehaviour:
         - time
         - finishEvent
         - realTime
-        paramDataPos: 0000000000000000000000000000000000000000000000000100000001000000000000000000000002000000
-        paramByteDataSize: 0000000001000000000000000000000000000000000000000000000001000000000000000000000001000000
+        paramDataPos: 0000000001000000000000000000000000000000000000000100000001000000010000000000000002000000020000000200000000000000000000000100000003000000000000000000000004000000
+        paramByteDataSize: 0000000000000000000000000000000000000000010000000000000000000000010000000000000001000000000000000000000000000000000000000000000001000000000000000000000001000000
     - name: State 2
       description: 
       colorIndex: 0
@@ -17053,7 +17020,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 5
+          value: 3
         fsmIntParams: []
         fsmBoolParams: []
         fsmVector2Params: []
@@ -17087,8 +17054,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 373.9922
-        y: 245
+        x: 372.9922
+        y: 241
         width: 100
         height: 16
       isBreakpoint: 0
@@ -17181,8 +17148,21 @@ MonoBehaviour:
       colorVariables: []
       rectVariables: []
       quaternionVariables: []
-      gameObjectVariables: []
+      gameObjectVariables:
+      - useVariable: 1
+        name: Score
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables:
+      - useVariable: 1
+        name: EndScore
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        typeName: EndScore
+        value: {fileID: 0}
       - useVariable: 1
         name: ScoreManager
         tooltip: 
@@ -17196,7 +17176,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 000000000000000000000000
+      variableCategoryIDs: 0000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 1
@@ -18180,7 +18160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   previewOnGUI: 1
   enableGUILayout: 1
-  drawStateLabels: 1
+  drawStateLabels: 0
   GUITextureStateLabels: 1
   GUITextStateLabels: 1
   filterLabelsWithDistance: 0
@@ -18798,7 +18778,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsWalking: 1
-  m_WalkSpeed: 5
+  m_WalkSpeed: 6
   m_RunSpeed: 8
   m_RunstepLenghten: 0.7
   m_JumpSpeed: 8
@@ -18806,7 +18786,7 @@ MonoBehaviour:
   m_GravityMultiplier: 1
   m_maxVel: 30
   jetpackFallOff: 20
-  m_flyModifier: 2
+  m_flyModifier: 3
   m_MouseLook:
     XSensitivity: 2
     YSensitivity: 2
@@ -19778,6 +19758,14 @@ Prefab:
       propertyPath: lookAt
       value: 
       objectReference: {fileID: 1890485926}
+    - target: {fileID: 11481238, guid: a95df343feab63c4f8255d924855d432, type: 2}
+      propertyPath: realName
+      value: Alex
+      objectReference: {fileID: 0}
+    - target: {fileID: 11481238, guid: a95df343feab63c4f8255d924855d432, type: 2}
+      propertyPath: starbucksName
+      value: Alecks
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a95df343feab63c4f8255d924855d432, type: 2}
   m_IsPrefabParent: 0
@@ -20555,6 +20543,14 @@ Prefab:
     - target: {fileID: 185368, guid: a95df343feab63c4f8255d924855d432, type: 2}
       propertyPath: m_Name
       value: NPC (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11481238, guid: a95df343feab63c4f8255d924855d432, type: 2}
+      propertyPath: realName
+      value: Michael
+      objectReference: {fileID: 0}
+    - target: {fileID: 11481238, guid: a95df343feab63c4f8255d924855d432, type: 2}
+      propertyPath: starbucksName
+      value: Mike-L
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a95df343feab63c4f8255d924855d432, type: 2}
